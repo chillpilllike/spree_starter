@@ -38,7 +38,7 @@ RUN bundle config set frozen false && \
 COPY . .
 
 # Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-#RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails db:system:change --to=postgresql
+RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails db:system:change --to=postgresql
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
 
