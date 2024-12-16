@@ -5,9 +5,16 @@
 #   gem "sqlite3"
 #
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  username: postgres
+  password: 8c55b6a8bc2c62f5665f
+  host: evershop-demo_spree-db
+  port: 5432
+  timeout: 20000
+
+
 
 development:
   <<: *default
